@@ -47,15 +47,15 @@ const settings = {
 
   MAX_DAMAGE_LEVEL: process.env.MAX_DAMAGE_LEVEL
     ? /^\d+$/.test(process.env.MAX_DAMAGE_LEVEL)
-    : 4,
+    : 20,
 
   MAX_RECHARGE_LEVEL: process.env.MAX_RECHARGE_LEVEL
     ? /^\d+$/.test(process.env.MAX_RECHARGE_LEVEL)
-    : 4,
+    : 8,
 
   MAX_ENERGY_LEVEL: process.env.MAX_ENERGY_LEVEL
     ? /^\d+$/.test(process.env.MAX_ENERGY_LEVEL)
-    : 4,
+    : 8,
 
   MIN_AVAILABLE_ENERGY: process.env.MIN_AVAILABLE_ENERGY
     ? /^\d+$/.test(process.env.MIN_AVAILABLE_ENERGY)
@@ -64,12 +64,12 @@ const settings = {
   RANDOM_TURBO_TAPS:
     process.env.RANDOM_TURBO_TAPS && _isArray(process.env.RANDOM_TURBO_TAPS)
       ? JSON.parse(process.env.RANDOM_TURBO_TAPS)
-      : [1000, 1500],
+      : [10, 20],
 
   RANDOM_TAPS:
     process.env.RANDOM_TAPS && _isArray(process.env.RANDOM_TAPS)
       ? JSON.parse(process.env.RANDOM_TAPS)
-      : [50, 200],
+      : [1, 30],
 
   SLEEP_BETWEEN_REQUESTS:
     process.env.SLEEP_BETWEEN_REQUESTS &&
@@ -78,7 +78,7 @@ const settings = {
       : process.env.SLEEP_BETWEEN_REQUESTS &&
         /^\d+$/.test(process.env.SLEEP_BETWEEN_REQUESTS)
       ? parseInt(process.env.SLEEP_BETWEEN_REQUESTS)
-      : [1000, 2000],
+      : [60, 180],
 
   DELAY_BETWEEN_STARTING_BOT:
     process.env.DELAY_BETWEEN_STARTING_BOT &&
@@ -89,7 +89,7 @@ const settings = {
   DELAY_BETWEEN_TURBO:
     process.env.DELAY_BETWEEN_TURBO && _isArray(process.env.DELAY_BETWEEN_TURBO)
       ? JSON.parse(process.env.DELAY_BETWEEN_TURBO)
-      : [10, 50],
+      : [1, 10],
 
   DELAY_BETWEEN_TAPS:
     process.env.DELAY_BETWEEN_TAPS && _isArray(process.env.DELAY_BETWEEN_TAPS)
